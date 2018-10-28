@@ -9,8 +9,9 @@ module.exports = {
         console.log(req.body)
         res.send({msg:'hello world from /transactions'})
         //.send ends the response, so no need for next()    
-    },
+    }/*,
+    //The below handler won't work until profile is added to res.locals
     profileGet: function (req, res, next){
         res.send(profile)
-    }
+    }*/
 }

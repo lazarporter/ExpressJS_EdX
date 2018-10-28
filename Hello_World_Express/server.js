@@ -5,6 +5,7 @@ const routes = require('./modules/routes.js')
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
+
 let profile = {
     username: "Lazer",
     email:"fake@mailinator.com",
@@ -19,11 +20,11 @@ app.use(auth.checkAuth)       //run the request through the module/middleware ca
 
 //curl localhost:3000/profile?api_key=123
 //version #1
-app.get('/profile', (req,res)=>{
-    res.send(profile)
-})
+ app.get('/profile', (req,res)=>{
+      res.send(profile)
+ })
 
-//version #2 this gets an empty object back
+//The below handler won't work until profile is added to res.locals
 //app.get('/profile', routes.profileGet)
 
 /*
