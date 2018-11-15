@@ -99,7 +99,7 @@
 			"response": []
 		},
 		{
-			"name": "04 Get all Posts",
+			"name": "04 Get all Posts (testing)",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -157,7 +157,7 @@
 			"response": []
 		},
 		{
-			"name": "06 see comments",
+			"name": "06 see comments (testing)",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -193,7 +193,7 @@
 			"response": []
 		},
 		{
-			"name": "07 add see comment",
+			"name": "07 add comment (testing)",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -221,7 +221,7 @@
 						"comments"
 					]
 				},
-				"description": "Add a comments to store[0].comments"
+				"description": "Add a comment to store[0].comments"
 			},
 			"response": []
 		}
