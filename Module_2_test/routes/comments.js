@@ -11,7 +11,7 @@ module.exports = {
         res.status(200).send(res.locals.store.posts[id])
     },
     updateComment(req, res) {
-        let id = req.params.postID
+        //Implement from here down
         console.log(`post ID: ${req.params.postID}, commentID: ${req.params.commentID}`)
     },
     removeComment(req, res) {

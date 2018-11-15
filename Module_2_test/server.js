@@ -1,8 +1,15 @@
+// the role of this REST API is to manage Blog Posts and comments:
+
+// GET and POST /posts
+// PUT and DELETE /posts/:postId/
+// GET and POST /posts/:postId/comments
+// PUT and DELETE /posts/:postId/comments/commentId
 const express = require('express')
 const path = require('path')
 const routes = require(path.join(__dirname, 'routes'))
 const bodyParser = require('body-parser')
 
+//intitalize the object that holds all of the Blog Posts, with a dummy post inside
 let store = {
     posts: [
       {name: 'Top 10 ES6 Features every Web Developer must know',
@@ -32,7 +39,7 @@ app.delete('/posts/:postID', routes.posts.removePost)
 
 app.get('/posts/:postID/comments', routes.comments.getComments)
 app.post('/posts/:postID/comments', routes.comments.addComment)
-//implement:
+//implement the two below:
 app.put('/posts/:postID/comments/:commentID', routes.comments.updateComment)
 app.delete('/posts/:postID/comments/commentId', routes.comments.removeComment)
 

@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "789d3c6e-19fb-4193-b7b1-56fbda6bd9ee",
+		"name": "Module 2 Express EdX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 create blogpost (initialization)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"Post #2\",\n        \"url\": \"2.com\",\n        \"text\": \"This essay number 2.\",\n        \"comments\": [\n            {\n                \"text\": \"2.1\"\n            },\n            {\n                \"text\": \"2.2.\"\n            },\n            {\n                \"text\": \"2.3\"\n            }\n        ]\n    }"
+				},
+				"url": {
+					"raw": "localhost:3000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "Create a new Post.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "02 comments (initialization)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"text\": \"comment 2.4\"}"
+				},
+				"url": {
+					"raw": "localhost:3000/posts/1/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"1",
+						"comments"
+					]
+				},
+				"description": "Add a new comment to your new post (make sure run 01 before you run 02)"
+			},
+			"response": []
+		},
+		{
+			"name": "03 edit a post (testing)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"Post #1 Renamed\",\n        \"url\": \"1.com\",\n        \"text\": \"This essay number 1, latest and greatest!\",\n        \"comments\": [\n            {\n                \"text\": \"Comment 1.1\"\n            },\n            {\n                \"text\": \"Comment 1.2.\"\n            },\n            {\n                \"text\": \"Comment 1.3\"\n            }\n        ]\n    }"
+				},
+				"url": {
+					"raw": "localhost:3000/posts/0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"0"
+					]
+				},
+				"description": "Edit the post at store[0]"
+			},
+			"response": []
+		},
+		{
+			"name": "04 Get all Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "See all the posts in the \"database\" (it's just an array in memory right now but whatever)"
+			},
+			"response": []
+		},
+		{
+			"name": "05 delete (testing)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/posts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"1"
+					]
+				},
+				"description": "deletes the post at store[1]"
+			},
+			"response": []
+		},
+		{
+			"name": "06 see comments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/posts/0/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"0",
+						"comments"
+					]
+				},
+				"description": "See the comments on store[0]"
+			},
+			"response": []
+		},
+		{
+			"name": "07 add see comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"text\": \"Here is a new comment!!\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/posts/0/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"0",
+						"comments"
+					]
+				},
+				"description": "Add a comments to store[0].comments"
+			},
+			"response": []
+		}
+	]
+}
