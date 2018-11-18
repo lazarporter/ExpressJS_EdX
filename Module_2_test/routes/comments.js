@@ -1,3 +1,4 @@
+
 module.exports = {
     getComments(req, res) {
       //app.get('/posts/:postID/comments', routes.comments.getComments)
@@ -12,9 +13,10 @@ module.exports = {
     },
     updateComment(req, res) {
         //Implement from here down
-        console.log(`post ID: ${req.params.postID}, commentID: ${req.params.commentID}`)
+        res.locals.store.posts[req.params.postID].comments[req.params.commentID] = req.body;
+        res.status(200).send(`post ID: ${req.params.postID},\ncommentID: ${req.params.commentID}\nPost:${JSON.stringify(res.locals.store.posts[req.params.postID])}`)
     },
     removeComment(req, res) {
       
-    }  
+    }
   }
