@@ -40,8 +40,8 @@ app.delete('/posts/:postID', routes.posts.removePost)
 app.get('/posts/:postID/comments', routes.comments.getComments)
 app.post('/posts/:postID/comments', routes.comments.addComment)
 //implement the two below:
-app.use('/posts/:postID/comments/:commentID', routes.comments.updateComment)
-//app.delete('/posts/:postID/comments/:commentId', routes.comments.removeComment)
+app.put('/posts/:postID/comments/:commentID', routes.comments.updateComment)
+app.delete('/posts/:postID/comments/:commentId', routes.comments.removeComment)
 
 
 

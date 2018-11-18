@@ -17,6 +17,8 @@ module.exports = {
         res.status(200).send(`post ID: ${req.params.postID},\ncommentID: ${req.params.commentID}\nPost:${JSON.stringify(res.locals.store.posts[req.params.postID])}`)
     },
     removeComment(req, res) {
-      
+        res.locals.store.posts[req.params.postID].comments.splice(req.params.commentID,1)
+        res.status(200).send(`post ID: ${req.params.postID},\n${JSON.stringify(res.locals.store.posts[req.params.postID])}`)
+
     }
   }
