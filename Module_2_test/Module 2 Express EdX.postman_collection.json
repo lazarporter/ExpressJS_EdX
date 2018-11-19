@@ -224,6 +224,65 @@
 				"description": "Add a comment to store[0].comments"
 			},
 			"response": []
+		},
+		{
+			"name": "08 Edit commnet (testing)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Here is an edited comment!!\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/posts/0/comments/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"0",
+						"comments",
+						"1"
+					]
+				},
+				"description": "Edit the comment made in 07"
+			},
+			"response": []
+		},
+		{
+			"name": "09 Remove comment (testing)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/posts/0/comments/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"0",
+						"comments",
+						"1"
+					]
+				},
+				"description": "Removes comment on Post[0].comments[1]"
+			},
+			"response": []
 		}
 	]
 }
