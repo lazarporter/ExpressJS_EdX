@@ -1,7 +1,6 @@
 
 module.exports = {
     getComments(req, res) {
-      //app.get('/posts/:postID/comments', routes.comments.getComments)
         let id = req.params.postID
         res.status(200).send(res.locals.store.posts[id].comments)
     }, 
@@ -13,12 +12,14 @@ module.exports = {
     },
     updateComment(req, res) {
         //Implement from here down
-        res.locals.store.posts[req.params.postID].comments[req.params.commentID] = req.body;
-        res.status(200).send(`post ID: ${req.params.postID},\ncommentID: ${req.params.commentID}\nPost:${JSON.stringify(res.locals.store.posts[req.params.postID])}`)
+        let id = req.params.postID
+        res.locals.store.posts[id].comments[req.params.commentID] = req.body;
+        res.status(200).send(`post ID: ${id},\ncommentID: ${req.params.commentID}\nPost:${JSON.stringify(res.locals.store.posts[id])}`)
     },
     removeComment(req, res) {
-        res.locals.store.posts[req.params.postID].comments.splice(req.params.commentID,1)
-        res.status(200).send(`post ID: ${req.params.postID},\n${JSON.stringify(res.locals.store.posts[req.params.postID])}`)
+        let id = req.params.postID
+        res.locals.store.posts[id].comments.splice(req.params.commentID,1)
+        res.status(200).send(`post ID: ${id},\n${JSON.stringify(res.locals.store.posts[id])}`)
 
     }
   }
